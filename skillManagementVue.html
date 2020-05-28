@@ -12,19 +12,22 @@
     <div id="app">
         <div class="container">
             <div class="row">
-                <p class="jumbotron">Login : <input type="text" v-model="users"/>Vous etes connecté en tant que {{ users }}</p>
+                <p class="jumbotron">Login : <input type="text" v-model="users"/>Vous etes connecté en tant que : {{ users }}</p>
             </div>
-            <h1>Vos compétences</h1>
+            
+            <h1 v-if="skills.length > 0">Vos compétences</h1>
                 <ul>
-                    <li v-for="skill in skills">{{ skill }}</li>
+                    <li v-for="skill in skills"><span class="badge badge-success">{{ skill }}</span></li>
                 </ul>
 
             <h1>Quel sont vos compétences</h1>
             <div class="row">
-                <div class="col-4" v-for="competence in competences">
-                    <p class="jumbotron">
+                <div class="col-3" v-for="competence in competences">
+                    <p class="jumbotron h-75">
                         {{ competence }}<br>
-                        <button v-on:click="selectionner(competence)">selectioner vos compétences</button>
+                        <button type="button" class="btn btn-outline-success" v-on:click="selectionner(competence)">Success</button>
+                        <button type="button" class="btn btn-outline-danger" v-on:click="selectionner(competence)">Danger</button>
+                        <button type="button" class="btn btn-outline-warning" v-on:click="selectionner(competence)">Warning</button> 
                     </p>
                 </div>
             </div>
@@ -34,7 +37,7 @@
         var app = new Vue({
             el: "#app",
             data: {
-                users: ["Zakaria", "Mohamed", "Pierre-Guillaume", "Guillaume"],
+                users: "",
                 competences: [  "Maquetter une application",
                                 "Réaliser une interface utilisateur web statique et adaptable",
                                 "Développer une interface utilisateur web dynamique",
@@ -43,7 +46,7 @@
                                 "Développer les composants d’accès aux données",
                                 "Développer la partie back-end d’une application web ou web mobile",
                                 "Elaborer et mettre en œuvre des composants dans une application de gestion de contenu ou e-commerce"],
-                                skills: []
+                skills: []
             },
             methods: {
                 selectionner: function(competence){
