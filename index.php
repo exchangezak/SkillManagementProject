@@ -1,3 +1,2 @@
-<?php 
-
-<h1>UN TITRE</h1>
+<?php
+"<h1> titre </h1>";
