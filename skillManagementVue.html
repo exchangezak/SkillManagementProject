@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skill Management Project</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+</head>
+<body>
+    <div id="app">
+        <div class="container">
+            <div class="row">
+                <p class="jumbotron">Login : <input type="text" v-model="users"/>Vous etes connecté en tant que {{ users }}</p>
+            </div>
+            
+        </div>
+    </div>
+    <script>
+        var app = new Vue({
+            el: "#app",
+            data: {
+                users: ["Zakaria", "Mohamed", "Pierre-Guillaume", "Guillaume"],
+                competences: [  "Maquetter une application",
+                                "Réaliser une interface utilisateur web statique et adaptable",
+                                "Développer une interface utilisateur web dynamique",
+                                "Réaliser une interface utilisateur avec une solution de gestion de contenu ou e-commerce",
+                                "Créer une base de données",
+                                "Développer les composants d’accès aux données",
+                                "Développer la partie back-end d’une application web ou web mobile",
+                                "Elaborer et mettre en œuvre des composants dans une application de gestion de contenu ou e-commerce"]
+            }
+        })
+    </script>
+</body>
+</html>
