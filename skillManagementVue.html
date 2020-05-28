@@ -16,12 +16,14 @@
             </div>
             
             <h1 v-if="skills.length > 0">Vos compétences</h1>
+            <!--je fais une boucle et je parcour le tableau SKILLS pour afficher une SKILL-->
                 <ul>
                     <li v-for="skill in skills"><span class="badge badge-success">{{ skill }}</span></li>
                 </ul>
 
             <h1>Quel sont vos compétences</h1>
             <div class="row">
+                <!--je jais une boucle et je parcour le tableau COMPETENCES pour afficher une COMPETENCE-->
                 <div class="col-3" v-for="competence in competences">
                     <p class="jumbotron h-75">
                         {{ competence }}<br>
