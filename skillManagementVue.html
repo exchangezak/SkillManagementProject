@@ -14,7 +14,20 @@
             <div class="row">
                 <p class="jumbotron">Login : <input type="text" v-model="users"/>Vous etes connecté en tant que {{ users }}</p>
             </div>
-            
+            <h1>Vos compétences</h1>
+                <ul>
+                    <li v-for="skill in skills">{{ skill }}</li>
+                </ul>
+
+            <h1>Quel sont vos compétences</h1>
+            <div class="row">
+                <div class="col-4" v-for="competence in competences">
+                    <p class="jumbotron">
+                        {{ competence }}<br>
+                        <button v-on:click="selectionner(competence)">selectioner vos compétences</button>
+                    </p>
+                </div>
+            </div>
         </div>
     </div>
     <script>
@@ -29,7 +42,13 @@
                                 "Créer une base de données",
                                 "Développer les composants d’accès aux données",
                                 "Développer la partie back-end d’une application web ou web mobile",
-                                "Elaborer et mettre en œuvre des composants dans une application de gestion de contenu ou e-commerce"]
+                                "Elaborer et mettre en œuvre des composants dans une application de gestion de contenu ou e-commerce"],
+                                skills: []
+            },
+            methods: {
+                selectionner: function(competence){
+                    this.skills.push(competence);
+                }
             }
         })
     </script>
