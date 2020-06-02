@@ -3,23 +3,20 @@
             <thead>                    
                 <tr>                    
                     <td>Nom</td>
-                    <td>Prenom</td>
-                    <td>Email</td>
-                    <td>Raison du message</td>
-                    <td>Message</td>
-                    <td>Suppression</td>
+                    <td>Compétence</td>
+                    <td>Niveau</td>
                 </tr>
             </thead>
             <tbody>                       
 
-    <!-- Connection à la BDD pour lecture des skills : READ -->
+    <!--READ : Connection à la BDD pour lecture des skills -->
 
     <?php
 
     $requeteSQL =
 <<<CODESQL
 
-    SELECT * FROM `OnePage`
+    SELECT * FROM `skills`
     ORDER BY message DESC
 
 CODESQL;
@@ -29,7 +26,7 @@ CODESQL;
 
     $tabLigne = $pdoStatement->fetchAll(); // Je recupère mon tableau de resultat
 
-    $sql = 'SELECT * FROM OnePage';
+    $sql = 'SELECT * FROM skills';
     $req = $pdo->query($sql);
     while($row = $req->fetch()) {
      extract($row);
@@ -37,11 +34,9 @@ CODESQL;
         echo
 <<<CODEHTML
         <tr>
-            <td>$nom</td>
-            <td>$prenom</td>
-            <td>$email</td>
-            <td>$raison</td>
-            <td>$message</td>
+            <td>$username</td>
+            <td>$skill</td>
+            <td>$level</td>
             <td><button data-id="$id" class="delete">Supprimer</button></td>  
         </tr> 
 CODEHTML;
@@ -55,56 +50,19 @@ CODEHTML;
         </table>
     </section>
 
-<!-- formulaire pour supprimer un message de la bdd -->
+<!-- formulaire pour supprimer un utilisateur de la bdd -->
 
     <section class="cache">
         <form id="delete" action="" method="POST">
         <label for="id">identifiantMessage</label>
-        <input type="text" name="id" required placeholder="entrez l'id du message à supprimer">
+        <input type="text" name="id" required placeholder="entrez l'id de l'utilisateur à supprimer">
         <input type="hidden" name="identifiantFormulaire" value="delete">
-        <button type="submit">Envoyez votre message</button>
+        <button type="submit">supprimer</button>
         </form>
     </section>
                   
 
-    <!-- Connection à la BDD pour lecture des messages reçus : READ -->
 
-    <?php
-
-    $requeteSQL =
-<<<CODESQL
-
-    SELECT * FROM `concerts`
-    ORDER BY message DESC
-
-CODESQL;
-
-    $tabAssoColonneValeur = [];
-    require "connectionDb.php";      // Je charge le code PHP pour envoyer la requete 
-
-    $tabLigne = $pdoStatement->fetchAll(); // Je recupère mon tableau de resultat
-
-    $sql = 'SELECT * FROM concerts';
-    $req = $pdo->query($sql);
-    while($row = $req->fetch()) {
-     extract($row);
-        
-        echo
-<<<CODEHTML
-        <tr>
-            <td>$lieu</td>
-            <td>$date</td>
-            <td>$ville</td>
-            <td>$adresse</td>
-            <td><button data-id="$id" class="delete">Supprimer</button></td>  
-        </tr> 
-CODEHTML;
-
-    }    
-
-    $req->closeCursor();
-
-    ?>
             </tbody>
         </table>
     </section>
