@@ -79,7 +79,9 @@ CODEHTML;
 
 <script>
     //quand je clique sur le bouton supprimer, on copie le code html du formulaire prérempli à la place du formulaire du delete (vide)
-    var listeBoutonDelete = document.querySelectorAll("button.delete");
+    var listeBoutonDelete = docume
+        // popup de confirmation avant suppression du message
+        var confirmation = window.confirm("Es-tu sûr de vouloir supprimer ce message ? Cette action est irréversible !");nt.querySelectorAll("button.delete");
     //Boucle en js sur chaque bouton
     listeBoutonDelete.forEach(function(bouton){
     //on va activer du code js sur le click
