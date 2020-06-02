@@ -55,33 +55,25 @@ CODEHTML;
     <section class="cache">
         <form id="delete" action="" method="POST">
         <label for="id">identifiantMessage</label>
-        <input type="text" name="id" required placeholder="entrez l'id de l'utilisateur à supprimer">
+        <input type="text" name="id" required placeholder="entrez l'id de la compétence à supprimer">
         <input type="hidden" name="identifiantFormulaire" value="delete">
         <button type="submit">supprimer</button>
         </form>
-    </section>
-                  
-
-
-            </tbody>
-        </table>
-    </section>
-
-    <?php 
+        <?php 
         //affectation de la valeur "delete" à la requête
         $identifiantFormulaire = $_REQUEST["identifiantFormulaire"] ?? "";
-    
         require 'filtreformulaire.php'; 
     ?>
+    </section>
+                
+    
 
 
 <!-- script JS permettant de supprimer un message en cliquant sur un bouton -->
 
 <script>
     //quand je clique sur le bouton supprimer, on copie le code html du formulaire prérempli à la place du formulaire du delete (vide)
-    var listeBoutonDelete = docume
-        // popup de confirmation avant suppression du message
-        var confirmation = window.confirm("Es-tu sûr de vouloir supprimer ce message ? Cette action est irréversible !");nt.querySelectorAll("button.delete");
+    var listeBoutonDelete = document.querySelectorAll("button.delete");
     //Boucle en js sur chaque bouton
     listeBoutonDelete.forEach(function(bouton){
     //on va activer du code js sur le click

@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
 <body>
@@ -17,7 +18,7 @@
         <form id="create" action="#formulaire-contact" method="POST">
             <label for="username">Entrez votre nom</label>
             <input type="text" name="username" required placeholder="Mohamed">
-            <label for="text">Entrez votre email pour recevoir une réponse</label>
+            <label for="text">Entrez le nom de la compétence à ajouter</label>
             <input type="text" name="skill" required placeholder="intelligence">
             <label for="text">Entrez le niveau de la compétence</label>
             <input type="text" name="level" placeholder="2">
