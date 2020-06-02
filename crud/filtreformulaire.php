@@ -66,5 +66,6 @@ CODESQL;
 //UPDATE D'UNE COMPETENCE
 
 
+
 //Envoie d'instruction à la bdd 
 require "connectionDB.php";
