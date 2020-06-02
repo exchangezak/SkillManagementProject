@@ -38,8 +38,7 @@ CODESQL;
             <td>$skill</td>
             <td>$level</td>
             <td><button data-id="$id" class="delete">Supprimer</button></td>  
-            <td><button data-id="$id" user=$username skill=$skill level=$level class="update">modifier</button></td>
-        </tr> 
+      </tr> 
 CODEHTML;
 
     }    
@@ -69,10 +68,7 @@ CODEHTML;
 
 <!-- formulaire pour modifier un utilisateur de la bdd -->
 
-
-
             
-
 <!-- script JS permettant de supprimer un message en cliquant sur un bouton -->
 
 <script>
