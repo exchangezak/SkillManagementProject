@@ -2,7 +2,8 @@
 
 require 'function.php';
 
-// Traitement du formulaire de contact
+// CREATE : ajout de compétence
+
 if ($identifiantFormulaire == "create")
 {
     //création d'un tableau associatif (clés et variables)
@@ -40,7 +41,8 @@ CODESQL;
     }
 }
 
-//Traitement du formulaire de suppression de compétence
+//DELETE: suppression de compétence
+
 if ($identifiantFormulaire == "delete") 
 {
     if (count($_REQUEST) > 0) {
@@ -60,44 +62,8 @@ CODESQL;
     }
 }
 
-//Traitement du formulaire d'ajout d'une date
-if ($identifiantFormulaire == "createDate")
-{
-    
-    $tabAssoColonneValeur = [
-        "lieu"      => maj(filtrer("lieu")),
-        "date"      => filtrer("date"),
-        "ville"     => maj(filtrer("ville")),
-        "adresse"   => filtrer("adresse"),
-    ];
-    
-    extract($tabAssoColonneValeur);
 
-    if ($lieu       != "" 
-        && $date    != ""
-        && $ville   != ""
-        && $adresse != "")
-    {
-        $requeteSQL   =
-<<<CODESQL
-
-INSERT INTO concerts
-( lieu, date, ville, adresse)
-VALUES
-( :lieu, :date, :ville, :adresse) 
-
-CODESQL;
-
-        //Feedback administrateur
-        echo "La date de concert a bien été enregistrée.";
-    }
-    
-    else {
-        echo "Veuillez remplir tous les champs obligatoire s'il vous plait !";
-    }
-}
-
-//UPDATE D'UNE DATE DE CONCERT
+//UPDATE D'UNE COMPETENCE
 
 
 //Envoie d'instruction à la bdd 

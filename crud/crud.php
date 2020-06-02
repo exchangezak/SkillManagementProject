@@ -9,7 +9,7 @@
             </thead>
             <tbody>                       
 
-    <!-- Connection à la BDD pour lecture des skills : READ -->
+    <!--READ : Connection à la BDD pour lecture des skills -->
 
     <?php
 
