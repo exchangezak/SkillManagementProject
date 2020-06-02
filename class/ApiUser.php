@@ -11,7 +11,7 @@ class ApiUser
         $userForm      = $_REQUEST["username"] ?? "";
         $passwordForm   = $_REQUEST["password"] ?? "";
 
-        $tabResult = Model::read("user", "pwd", $userForm);
+        $tabResult = Model::read("username", "pwd", $userForm);
 
         $passwordHash = password_hash($passwordForm, PASSWORD_DEFAULT);
 

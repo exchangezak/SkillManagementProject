@@ -11,7 +11,7 @@ WHERE $nomColonne = :$nomColonne;
 CODESQL;
 
         
-        $pdo =new PDO("mysql:host=remotemysql.com;dbname=rkWpTuWAEM;charset=utf8","rkWpTuWAEM","xvWhaSlsc5");
+        $pdo =new PDO("mysql:host=remotemysql.com;dbname=rkWpTuWAEM;charset=utf8","rkWpTuWAEM","XvWhaSlsc5");
         $pdostatement = $pdo->prepare($requeteSQL);
         $pdostatement->execute(["$nomColonne"=> $valeurColonne]);
 
@@ -21,7 +21,7 @@ CODESQL;
 
     static function envoyerRequeteSQL($requeteSQL,$tabAssoColonneValeur)
     {
-        $pdo =new PDO("mysql:host=remotemysql.com;dbname=rkWpTuWAEM;charset=utf8","rkWpTuWAEM","xvWhaSlsc5");
+        $pdo =new PDO("mysql:host=remotemysql.com;dbname=rkWpTuWAEM;charset=utf8","rkWpTuWAEM","XvWhaSlsc5");
         $pdostatement = $pdo->prepare($requeteSQL);
         $pdostatement->execute($tabAssoColonneValeur);
         return $pdostatement;
