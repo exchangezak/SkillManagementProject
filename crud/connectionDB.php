@@ -1,6 +1,6 @@
 <?php
 
-$pdo = new PDO("https://remotemysql.com/phpmyadmin/index.php;dbname=rkWpTuWAEM;charset=utf8;", "rkWpTuWAEM", "XvWhaSlsc5");
+$pdo = new PDO("mysql:host=remotemysql.com; dbname=rkWpTuWAEM; charset=utf8;", "rkWpTuWAEM", "XvWhaSlsc5");
 
 //on envoie la requete préparée, pdoStatement est un container qui englobe les résultats de la requête SQL 
 $pdoStatement = $pdo->prepare($requeteSQL);

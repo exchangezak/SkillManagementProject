@@ -22,7 +22,7 @@
 CODESQL;
 
     $tabAssoColonneValeur = [];
-    require "connectionDb.php";      // Je charge le code PHP pour envoyer la requete 
+    require "connectionDB.php";      // Je charge le code PHP pour envoyer la requete 
 
     $tabLigne = $pdoStatement->fetchAll(); // Je recupère mon tableau de resultat
 
@@ -71,7 +71,7 @@ CODEHTML;
         //affectation de la valeur "delete" à la requête
         $identifiantFormulaire = $_REQUEST["identifiantFormulaire"] ?? "";
     
-        require 'php/filtreformulaire.php'; 
+        require 'filtreformulaire.php'; 
     ?>
 
 

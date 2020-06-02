@@ -67,4 +67,4 @@ CODESQL;
 
 
 //Envoie d'instruction à la bdd 
-require "connectionDb.php";
+require "connectionDB.php";
