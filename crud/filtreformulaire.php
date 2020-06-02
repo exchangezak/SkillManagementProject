@@ -53,7 +53,7 @@ if ($identifiantFormulaire == "delete")
         $requeteSQL   =
 <<<CODESQL
 
-DELETE FROM skill WHERE id = :id
+DELETE FROM skills WHERE id = :id
 
 CODESQL;
 
