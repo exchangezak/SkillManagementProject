@@ -65,6 +65,17 @@ CODESQL;
 
 //UPDATE D'UNE COMPETENCE
 
+    if($identifiantFormulaire =="update"){
+        if(isset($_REQUEST["id"]) && isset($_REQUEST["username"])&& isset($_REQUEST["skill"])&& isset($_REQUEST["level"])){
+            $tabAssoColonneValeur=["id"=>$_REQUEST["id"],
+                      "username"=>maj(filtrer("username")),
+                      "skill"=>maj(filtrer("skill")),
+                     "level"=>filtrer("level")
+        ];
+        $requeteSQL="UPDATE skills SET username = :username, skill = :skill, level = :level WHERE id = :id"; 
+        
+        }
+}
 
 
 
