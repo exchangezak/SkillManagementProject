@@ -1,6 +1,6 @@
 <?php
 
-
+require_once 'class/ApiUser.php';
 $tabAssoJson = [];
 $tabAssoJson["request"] = $_REQUEST;
 

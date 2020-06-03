@@ -1,4 +1,5 @@
 <?php
+require_once "Model.php";
 
 class ApiUser
 {
@@ -8,7 +9,7 @@ class ApiUser
 
     static function login()
     {
-        $userForm      = $_REQUEST["username"] ?? "";
+        $userForm      = $_REQUEST["userName"] ?? "";
         $passwordForm   = $_REQUEST["password"] ?? "";
 
         $tabResult = Model::read("username", "pwd", $userForm);
