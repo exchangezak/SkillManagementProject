@@ -120,12 +120,12 @@ butMod.forEach(function (mod) {
    mod.addEventListener("click", function (e) {
 //on recupere les donnes du formulaire quon souhaite modifer       
       let direction = e.target
-      let ip = direction.getAttribute("data-id")
+      let id = direction.getAttribute("data-id")
       let username = direction.getAttribute("user")
       let skill = direction.getAttribute("skill")
       let level=direction.getAttribute("level")
 //on remplie les inputs du formulaire avec les donnes qu'on a recupéré      
-      document.querySelector("form.update input[name=id]").value= ip
+      document.querySelector("form.update input[name=id]").value= id
       document.querySelector("form.update input[name=username]").value = username
       document.querySelector("form.update input[name=skill]").value = skill
       document.querySelector("form.update input[name=level]").value = level
