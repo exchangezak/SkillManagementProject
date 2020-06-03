@@ -1,17 +1,17 @@
 <?php
+require_once "Model.php";
 
 class ApiUser
 {
 
     static $confirmation    ="";
-    static $cleApi          ="";
 
     static function login()
     {
-        $userForm      = $_REQUEST["username"] ?? "";
+        $userForm      = $_REQUEST["userName"] ?? "";
         $passwordForm   = $_REQUEST["password"] ?? "";
 
-        $tabResult = Model::read("username", "pwd", $userForm);
+        $tabResult = Model::read("user", "username", $userForm);
 
         $passwordHash = password_hash($passwordForm, PASSWORD_DEFAULT);
 
@@ -22,7 +22,7 @@ class ApiUser
         if (!empty($tabLigne)) {
             if (password_verify($passwordForm, $pwd)) 
             {
-                ApiUser::$confirmation = " Bienvenue $login";
+                ApiUser::$confirmation = " Bienvenue $userForm";
 
             } 
             
@@ -34,7 +34,7 @@ class ApiUser
         
         else 
         {
-            ApiUser::$confirmation = "Email non trouvé ($passwordHash)";
+            ApiUser::$confirmation = "Compte non trouvé ($passwordHash)";
         }
     }
 }

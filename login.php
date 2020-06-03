@@ -1,7 +1,7 @@
 <section>
     <h3>Connexion</h3>
     <form class="ajax" action="">
-            <input type="text" name="username" id="" required placeholder="Nom d'utilisateur">
+            <input type="text" name="userName" id="" required placeholder="Nom d'utilisateur">
             <input type="password" name="password" required placeholder="Mot de passe">
             <button>Se connecter</button>
             <div class="confirmation"></div>
