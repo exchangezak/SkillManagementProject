@@ -1,7 +1,22 @@
-<section>
-    <h3>Connexion</h3>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Skills de developpeur</title>
+        <link rel="stylesheet" href="style.css">
+</head>
+<body class="pg">
+        
+
+</html>
+<header>
+<h1>Une App de qualité supérieur</h1>
+</header>
+<section >
+    <h2>Connexion</h2>
     <form class="ajax" action="">
-            <input type="text" name="userName" id="" required placeholder="Nom d'utilisateur">
+            <input type="textarea" name="userName" id="" cols="20" required placeholder="Nom d'utilisateur">
             <input type="password" name="password" required placeholder="Mot de passe">
             <button>Se connecter</button>
             <div class="confirmation"></div>
@@ -9,6 +24,9 @@
     </form>
 </section>
 
+<footer>
+        <p>Tous droits réservés.</p>
+</footer>
 <script>
     var connexion ={};
     connexion.start = function()
@@ -34,3 +52,5 @@
     connexion.start();
 
 </script>
+
+</body>
