@@ -14,9 +14,9 @@
             <div class="row">
                 <p class="jumbotron">Login : <input type="text" v-model="users"/>Vous etes connecté en tant que : {{ users }}</p>
             </div>
-            
+            <!--v-if si le tableau skills est plus grand que 0 on affiche le h1 "vos competences"-->
             <h1 v-if="skills.length > 0">Vos compétences</h1>
-            <!--je fais une boucle et je parcour le tableau SKILLS pour afficher une SKILL-->
+            <!--je fais une boucle et je parcour le tableau SKILLS pour afficher une SKILL qui corespond a une competence pusher dans le tableau skills-->
                 <ul>
                     <li v-for="skill in skills"><span class="badge badge-success">{{ skill }}</span></li>
                 </ul>
@@ -27,6 +27,7 @@
                 <div class="col-3" v-for="competence in competences">
                     <p class="jumbotron h-75">
                         {{ competence }}<br>
+                        <!--avec v-on:click on ecoute le click sur le bouton et on active la fonction selectionner pour pusher la competence dans le tableau skills-->
                         <button type="button" class="btn btn-outline-success" v-on:click="selectionner(competence)">Success</button>
                         <button type="button" class="btn btn-outline-danger" v-on:click="selectionner(competence)">Danger</button>
                         <button type="button" class="btn btn-outline-warning" v-on:click="selectionner(competence)">Warning</button> 
@@ -51,6 +52,7 @@
                 skills: []
             },
             methods: {
+                
                 selectionner: function(competence){
                     this.skills.push(competence);
                 }
