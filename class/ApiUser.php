@@ -22,10 +22,9 @@ class ApiUser
         if (!empty($tabLigne)) {
             if (password_verify($passwordForm, $pwd)) 
             {
-                $_SESSION['page_origine'] = $_SERVER['REQUEST_URI'];
+                
                 header('Location:index.php');
                 exit;
-
             } 
             
             else 
