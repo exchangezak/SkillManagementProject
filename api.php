@@ -19,7 +19,6 @@ if (is_callable($codeApi))
 
 // ON VA RECUPERER LA REPONSE DANS LA PROPRIETE
 $tabAssoJson["confirmation"] = ApiUser::$confirmation;
-$tabAssoJson["cleApi"]       = ApiUser::$cleApi;
 
 // CONVERTIR LE TABLEAU ASSOCIATIF EN TEXTE FORMATTE EN JSON
 // https://www.php.net/manual/fr/function.json-encode.php

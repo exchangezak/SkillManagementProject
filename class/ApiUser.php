@@ -5,14 +5,13 @@ class ApiUser
 {
 
     static $confirmation    ="";
-    static $cleApi          ="";
 
     static function login()
     {
         $userForm      = $_REQUEST["userName"] ?? "";
         $passwordForm   = $_REQUEST["password"] ?? "";
 
-        $tabResult = Model::read("username", "pwd", $userForm);
+        $tabResult = Model::read("user", "username", $userForm);
 
         $passwordHash = password_hash($passwordForm, PASSWORD_DEFAULT);
 
@@ -23,7 +22,9 @@ class ApiUser
         if (!empty($tabLigne)) {
             if (password_verify($passwordForm, $pwd)) 
             {
-                ApiUser::$confirmation = " Bienvenue $login";
+                $_SESSION['page_origine'] = $_SERVER['REQUEST_URI'];
+                header('Location:index.php');
+                exit;
 
             } 
             
@@ -35,7 +36,7 @@ class ApiUser
         
         else 
         {
-            ApiUser::$confirmation = "Email non trouvé ($passwordHash)";
+            ApiUser::$confirmation = "Compte non trouvé ($passwordHash)";
         }
     }
 }
