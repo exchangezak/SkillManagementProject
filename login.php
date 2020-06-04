@@ -47,9 +47,20 @@
             fetch('api.php',{
                     method: 'POST',
                     body: formData
-            });
+            })
+            
+            .then(function(response){
+            console.log(response);
+            if(isset($_COOKIE))
+            {
+                window.location.replace('index.php');
+            }
+            })
+
+            
     }
     connexion.start();
+    
 
 </script>
 

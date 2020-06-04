@@ -5,9 +5,10 @@ class ApiUser
 {
 
     static $confirmation    ="";
-
+    static $check           = 0;
     static function login()
     {
+        
         $userForm      = $_REQUEST["userName"] ?? "";
         $passwordForm   = $_REQUEST["password"] ?? "";
 
@@ -17,14 +18,16 @@ class ApiUser
 
         foreach ($tabResult as $tabLigne) {
             extract($tabLigne);
+            
         }
 
         if (!empty($tabLigne)) {
             if (password_verify($passwordForm, $pwd)) 
             {
+                setcookie ("User", $username);
                 
-                header('Location:index.php');
-                exit;
+                ApiUser:: $check = 1;
+                ApiUser::$confirmation = "C'est ok, entre $username";
             } 
             
             else 
