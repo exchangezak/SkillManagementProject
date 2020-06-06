@@ -6,7 +6,7 @@
         <title>Skills de developpeur</title>
         <link rel="stylesheet" href="style.css">
 </head>
-<body class="pg">
+<body onload="deleteCookie()" class="pg">
         
 
 </html>
@@ -22,14 +22,52 @@
             <div class="confirmation"></div>
             <input type="hidden" name="methodeApi" value="login">
     </form>
+    <p id="reponse"></p>
 </section>
 
 <footer>
         <p>Tous droits réservés.</p>
 </footer>
+<?php>require_once 'api.php';<?>
 <script>
-    var connexion ={};
-    var cookie = document.cookie
+        var reponse = document.querySelector('#reponse');
+
+        var connexion ={};
+        var cookie = document.cookie;
+
+     function deleteCookie() {
+                        var user = getCookie("User");
+                        if (user != "") {
+                                user = "";
+                        }
+                };
+
+    function getCookie(cname) {
+                var name = cname + "=";
+                var ca = document.cookie.split(';');
+
+                for(var i = 0; i < ca.length; i++) {
+                        var c = ca[i];
+                        while (c.charAt(0) == ' ') {
+                        c = c.substring(1);
+                        }
+                        if (c.indexOf(name) == 0) {
+                        return c.substring(name.length, c.length);
+                        }
+                }
+                return "";
+                };
+
+                function checkCookie() {
+                        var user = getCookie("User");
+                        if (user != "") {
+                                window.location.replace('index.php');
+                        }
+                        else{
+                                reponse.innerText ='accès refusé' ;
+                        }
+                };
+
     connexion.start = function()
     {
             var listeSelection = document.querySelectorAll('form.ajax');
@@ -37,6 +75,7 @@
             {
                     balise.addEventListener('submit',connexion.cbAjax); //cb = call back
             });
+        
     }
 
     connexion.cbAjax = function (event)
@@ -50,19 +89,14 @@
                     body: formData
             })
             
-            .then(function(response){
+            .then(checkCookie)
 
-            if(cookie !="")
-            {
-                window.location.replace('index.php');
-            }
-            })
 
             
     }
+
     connexion.start();
     
-
 </script>
 
 </body>

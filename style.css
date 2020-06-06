@@ -16,7 +16,15 @@
     color: white;  
 }
 
-.pg p{
+.pg #reponse{
+    font-size: large;
+    font-weight: bold;
+    margin: 0;
+    padding-top: 10%;
+    color: red;
+}
+
+.pg p {
     margin: 0;
     padding-top: 10%;
     color: white;
