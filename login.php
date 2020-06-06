@@ -29,6 +29,7 @@
 </footer>
 <script>
     var connexion ={};
+    var cookie = document.cookie
     connexion.start = function()
     {
             var listeSelection = document.querySelectorAll('form.ajax');
@@ -50,8 +51,8 @@
             })
             
             .then(function(response){
-            console.log(response);
-            if(isset($_COOKIE))
+
+            if(cookie !="")
             {
                 window.location.replace('index.php');
             }
