@@ -1,5 +1,5 @@
 <?php
-
+require_once 'class/testApiVue.php';
 require_once 'class/ApiUser.php';
 $tabAssoJson = [];
 $tabAssoJson["request"] = $_REQUEST;
@@ -19,10 +19,12 @@ if (is_callable($codeApi))
 
 // ON VA RECUPERER LA REPONSE DANS LA PROPRIETE
 $tabAssoJson["confirmation"] = ApiUser::$confirmation;
-$tabAssoJson["check"] = ApiUser::$check;
+$tabAssoSkills["skillTab"] = ApiVue::getSkills();
+
 
 // CONVERTIR LE TABLEAU ASSOCIATIF EN TEXTE FORMATTE EN JSON
 // https://www.php.net/manual/fr/function.json-encode.php
-$texteJSON = json_encode($tabAssoJson, JSON_PRETTY_PRINT);
-
+$texteJSON =    json_encode($tabAssoJson, JSON_PRETTY_PRINT);
+$texteSKills=    json_encode($tabAssoJson, JSON_PRETTY_PRINT);
 echo $texteJSON;
+echo $texteSKills;

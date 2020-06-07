@@ -5,7 +5,7 @@ class ApiUser
 {
 
     static $confirmation    ="";
-    static $check           = 0;
+  
     static function login()
     {
         
@@ -26,7 +26,7 @@ class ApiUser
             {
                 setcookie ("User", $username);
                 
-                ApiUser:: $check = 1;
+               
                 ApiUser::$confirmation = "C'est ok, entre $username";
             } 
             
