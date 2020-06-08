@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
-<body>
+<body onload="load.checkPage()">
     <header>
 
     </header>
@@ -45,5 +45,20 @@
     <footer>
 
     </footer>
+
+    <!-- Code permettant la redirection si un utilisateur  essaie d'accéder directement à la page sans se loger -->
+    <script src="app.js"></script>
+    <script>
+        
+       load.checkPage= function(){
+            var user = getCookie("User");
+            var activPage = document.location;
+            if(typeof user != 'undefined'){
+           if(activPage == "http://localhost/projectSkill/SkillManagementProject/index.php" && user == ""){
+               document.location.replace("login.php")
+           }
+       }
+    }
+    </script>
 </body>
 </html>
