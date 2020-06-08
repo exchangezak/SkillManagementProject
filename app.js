@@ -32,34 +32,46 @@ var cookie = document.cookie;
         };
 
 
-load.resetCookie = function() {
+        load.resetCookie = function() {
                 var user = getCookie("User");
                 if (user != "") {
                         document.cookie = "User=; ";
                 }
         };
 
+        /* Code permettant la redirection si un utilisateur essaie d'accéder directement à la page sans se loger */
+        load.checkPage= function(){
+                var user = getCookie("User");
+                var activPage = document.location;
+                if(activPage == "http://localhost/projectSkill/SkillManagementProject/index.php" ){
+               if(typeof user != 'undefined' || user == ""){
+                   document.location.replace("login.php")
+               }
+           }
+        }
+        /* FIN Code permettant la redirection si un utilisateur essaie d'accéder directement à la page sans se loger */
 
-connexion.start = function()
-{
-    var listeSelection = document.querySelectorAll('form.ajax');
-    listeSelection.forEach(function(balise)
-    {
-            balise.addEventListener('submit',connexion.cbAjax); //cb = call back
-    });
 
-}
+        connexion.start = function()
+        {
+        var listeSelection = document.querySelectorAll('form.ajax');
+        listeSelection.forEach(function(balise)
+        {
+                balise.addEventListener('submit',connexion.cbAjax); //cb = call back
+        });
 
-connexion.cbAjax = function (event)
-{
-    event.preventDefault();
+        }
 
-    var formulaire = event.target;
-    var formData = new FormData(formulaire);
-    fetch('api.php',{
-            method: 'POST',
-            body: formData
-    })
-    
-    .then(checkCookie)
-}
+        connexion.cbAjax = function (event)
+        {
+        event.preventDefault();
+
+        var formulaire = event.target;
+        var formData = new FormData(formulaire);
+        fetch('api.php',{
+                method: 'POST',
+                body: formData
+        })
+        
+        .then(checkCookie)
+        }
