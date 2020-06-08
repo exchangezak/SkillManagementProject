@@ -60,7 +60,13 @@
             }
         })
         //Test PGA//
-        fetch("api.php");
+        fetch("api.php")
+        .then(function(responServeur){
+                        return  responServeur.json();
+                    })
+                    .then(function(json){
+                        console.log(json);
+                    });
     </script>
 </body>
 </html>

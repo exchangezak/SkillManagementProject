@@ -40,7 +40,7 @@ var cookie = document.cookie;
         };
 
         /* Code permettant la redirection si un utilisateur essaie d'accéder directement à la page sans se loger */
-        load.checkPage= function(){
+        load.isLoged= function(){
                 var user = getCookie("User");
                 var activPage = document.location;
                 if(activPage == "http://localhost/projectSkill/SkillManagementProject/index.php" ){

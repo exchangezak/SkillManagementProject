@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
-<body onload="load.checkPage()"><!-- Code permettant la redirection si un utilisateur essaie d'accéder directement à la page sans se loger  dans app.js-->
+<body onload="load.isLoged()"><!-- Code permettant la redirection si un utilisateur essaie d'accéder directement à la page sans se loger  dans app.js-->
     <header>
 
     </header>
@@ -45,12 +45,6 @@
     <footer>
 
     </footer>
-
-    
     <script src="app.js"></script>
-    <script>
-        
-
-    </script>
 </body>
 </html>
