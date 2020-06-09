@@ -30,7 +30,7 @@
         <footer>
                 <p>Tous droits réservés.</p>
         </footer>
-        <?php>require_once 'api.php';<?>
+        <?php require_once 'api.php';?>
         <script src="app.js"></script>
         <script>
                 connexion.start();
