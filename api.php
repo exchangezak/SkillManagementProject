@@ -18,8 +18,13 @@ if (is_callable($codeApi))
 }
 
 // ON VA RECUPERER LA REPONSE DANS LA PROPRIETE
+$curPageName = substr($_SERVER["SCRIPT_NAME"],strrpos($_SERVER["SCRIPT_NAME"],"/")+1);
+if( $curPageName == 'login.php' ){
 $tabAssoJson["confirmation"] = ApiUser::$confirmation;
-
+}
+else{
+    $tabAssoJson = ApiVue::getSkills();
+}
 
 
 // CONVERTIR LE TABLEAU ASSOCIATIF EN TEXTE FORMATTE EN JSON
