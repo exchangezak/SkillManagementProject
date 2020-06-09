@@ -43,10 +43,13 @@ var cookie = document.cookie;
         load.checkPage= function(){
                 var user = getCookie("User");
                 var activPage = document.location;
-               if(activPage == "http://localhost/projectSkill/SkillManagementProject/index.php" && user == ""){
-                   document.location.replace("login.php")
-               
-           }
+                console.log(activPage);
+                if (typeof user == undefined || user == "" ){
+                       
+                                document.location.replace("login.php")
+                                
+                }        
+                       
         }
         /* FIN Code permettant la redirection si un utilisateur essaie d'accéder directement à la page sans se loger */
 
