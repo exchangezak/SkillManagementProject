@@ -35,15 +35,13 @@ var cookie = document.cookie;
         load.resetCookie = function() {
                 var user = getCookie("User");
                 if (user != "") {
-                        document.cookie = "User=; ";
+                        document.cookie = "User= ";
                 }
         };
 
         /* Code permettant la redirection si un utilisateur essaie d'accéder directement à la page sans se loger */
         load.checkPage= function(){
                 var user = getCookie("User");
-                var activPage = document.location;
-                console.log(activPage);
                 if (typeof user == undefined || user == "" ){
                        
                                 document.location.replace("login.php")

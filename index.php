@@ -12,7 +12,7 @@
 
     </header>
     <main>
-
+    <a href='login.php'>Déconnection</a>
     <section id="formulaire-contact">
         <h3>Completez le formulaire suivant pour ajouter une compétence: </h3>
         <form id="create" action="#formulaire-contact" method="POST">
